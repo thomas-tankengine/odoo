@@ -870,7 +870,7 @@ class ProcurementOrder(models.Model):
         name = product_lang.display_name
         if product_lang.description_purchase:
             name += '\n' + product_lang.description_purchase
-
+        print '_get_date_planned', seller, po
         date_planned = self.env['purchase.order.line']._get_date_planned(seller, po=po).strftime(DEFAULT_SERVER_DATETIME_FORMAT)
 
         return {
