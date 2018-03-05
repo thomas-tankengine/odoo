@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-13 09:40+0000\n"
-"PO-Revision-Date: 2017-09-30 18:20+0000\n"
+"PO-Revision-Date: 2018-01-09 10:59+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Persian (http://www.transifex.com/odoo/odoo-9/language/fa/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr ""
 #: code:addons/stock/stock.py:1847
 #, python-format
 msgid " (%s reserved)"
-msgstr ""
+msgstr "(1 %s رزرو)"
 
 #. module: stock
 #: code:addons/stock/stock.py:1850
@@ -100,7 +100,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_move_picking_form
 msgid "#Products"
-msgstr ""
+msgstr "#محصولات"
 
 #. module: stock
 #: code:addons/stock/stock.py:2739
@@ -112,13 +112,13 @@ msgstr ""
 #: code:addons/stock/stock.py:3299
 #, python-format
 msgid "%s: Supply Product from %s"
-msgstr ""
+msgstr "1 %s : تامین کالا از 1%s"
 
 #. module: stock
 #: code:addons/stock/res_config.py:25
 #, python-format
 msgid "%s: Transit Location"
-msgstr ""
+msgstr "%s : مکان حمل"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_move_state
@@ -159,14 +159,14 @@ msgstr ",اگر حسابداری یا خریدی نصب شده باشد"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "- The Odoo Team"
-msgstr ""
+msgstr "- تیم اودوو"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid ""
 "<span class=\"label label-default text-center "
 "odoo_purple\">'Available'</span>"
-msgstr ""
+msgstr "<span class=\"label label-default text-center odoo_purple\">'موجود'</span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -187,14 +187,14 @@ msgstr ""
 msgid ""
 "<span class=\"label label-default text-center odoo_purple\">Confirm "
 "Order</span>"
-msgstr ""
+msgstr "<span class=\"label label-default text-center odoo_purple\">تایید سفارش</span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid ""
 "<span class=\"label label-default text-center odoo_purple\">Confirm "
 "Sale</span>"
-msgstr ""
+msgstr "<span class=\"label label-default text-center odoo_purple\">تایید فروش</span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -1427,7 +1427,7 @@ msgstr "ایجاد شده در"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_procurement_rule_form_stock_inherit
 msgid "Creates"
-msgstr ""
+msgstr "ایجاد شد"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_move_search
@@ -1523,7 +1523,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Daily Operations"
-msgstr ""
+msgstr "عمکرد روزانه"
 
 #. module: stock
 #: model:ir.ui.menu,name:stock.stock_picking_type_menu
@@ -2608,7 +2608,7 @@ msgid ""
 "Incoterms are series of sales terms. They are used to divide transaction "
 "costs and responsibilities between buyer and seller and reflect state-of-"
 "the-art transportation practices."
-msgstr ""
+msgstr "اینکوترم یک سری شرایط و استانداردهای فروش می‌باشد. از این قواعد برای تقسیم هزینه‌های معامله و مسئولیت‌ها بین خریدار و فروشنده استفاده می‌شود و منعکس‌کننده‌ی امور حمل و نقل در سطح پیشرفته است."
 
 #. module: stock
 #: code:addons/stock/stock.py:2161
@@ -2820,7 +2820,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model,name:stock.model_stock_location_route
 msgid "Inventory Routes"
-msgstr ""
+msgstr "مسیرهای موجودی"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -3871,6 +3871,12 @@ msgstr ""
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move_move_orig_ids
 msgid "Original Move"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/stock.py:576
+#, python-format
+msgid "Otherwise make sure the right stock/owner is set."
 msgstr ""
 
 #. module: stock
@@ -5102,7 +5108,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:stock.view_move_picking_form
 #: model:ir.ui.view,arch_db:stock.view_stock_move_scrap_wizard
 msgid "Scrap"
-msgstr ""
+msgstr "اسقاط"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_stock_move_scrap_wizard
@@ -5112,7 +5118,7 @@ msgstr "مکان اوراقی"
 #. module: stock
 #: model:ir.actions.act_window,name:stock.move_scrap
 msgid "Scrap Move"
-msgstr ""
+msgstr "انتقال به اسقاط"
 
 #. module: stock
 #: model:ir.model,name:stock.model_stock_move_scrap
@@ -5133,7 +5139,7 @@ msgstr "اوراق شد"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_inventory_filter
 msgid "Search Inventory"
-msgstr ""
+msgstr "جستجوی انبار"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.stock_location_path_filter
@@ -5273,7 +5279,7 @@ msgstr "نام کوتاه"
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_warehouse_code
 msgid "Short name used to identify your warehouse"
-msgstr ""
+msgstr "استفاده از نام مخفف جهت شناسه محل انبار"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_move_string_availability_info
@@ -5367,7 +5373,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_inventory_form
 msgid "Start Inventory"
-msgstr ""
+msgstr "شروع فهرست انبار"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_inventory_line_state
@@ -5386,12 +5392,12 @@ msgstr "وضعیت"
 #: model:stock.location,name:stock.stock_location_stock
 #, python-format
 msgid "Stock"
-msgstr ""
+msgstr "موجودی کالا"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_inventory
 msgid "Stock Inventory"
-msgstr ""
+msgstr "موجودی انبار"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.stock_inventory_line_tree
@@ -6545,7 +6551,7 @@ msgstr "تاریخچه ارتباط با وبسایت"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Welcome"
-msgstr ""
+msgstr "خوش آمدید"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_location_route_warehouse_selectable
@@ -6818,6 +6824,14 @@ msgstr ""
 #: code:addons/stock/stock.py:4447
 #, python-format
 msgid "You should provide a different serial number for each piece"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/product.py:349
+#, python-format
+msgid ""
+"You still have some active reordering rules on this product. Please archive "
+"or delete them first."
 msgstr ""
 
 #. module: stock
