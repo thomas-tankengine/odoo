@@ -444,7 +444,7 @@ class AccountMoveLine(models.Model):
                 raise UserError(_("You cannot create journal items with a secondary currency without filling both 'currency' and 'amount currency' field."))
 
     @api.multi
-    @api.constrains('amount_currency')
+    @api.constrains('amount_currency', 'debit', 'credit')
     def _check_currency_amount(self):
         for line in self:
             if line.amount_currency:
@@ -1216,7 +1216,7 @@ class AccountMoveLine(models.Model):
                 raise UserError(_('You cannot do this modification on a reconciled entry. You can just change some non legal fields or you must unreconcile first.\n%s.') % err_msg)
             if line.move_id.id not in move_ids:
                 move_ids.add(line.move_id.id)
-            self.env['account.move'].browse(list(move_ids))._check_lock_date()
+        self.env['account.move'].browse(list(move_ids))._check_lock_date()
         return True
 
     ####################################################
