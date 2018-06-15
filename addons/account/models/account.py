@@ -691,6 +691,7 @@ class AccountTax(models.Model):
             round_tax = bool(self.env.context['round'])
             round_total = bool(self.env.context['round'])
 
+
         if not round_tax:
             prec += 5
 

@@ -69,8 +69,10 @@ def serialize_exception(f):
         try:
             return f(*args, **kwargs)
         except Exception, e:
+            print 'error', e
             _logger.exception("An exception occured during an http request")
             se = _serialize_exception(e)
+            # se = "Error"
             error = {
                 'code': 200,
                 'message': "Odoo Server Error",

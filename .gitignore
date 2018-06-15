@@ -15,7 +15,7 @@ _build/
 *.orig
 status
 # odoo filestore
-openerp/filestore
+filestore
 # maintenance migration scripts
 openerp/addons/base/maintenance
 

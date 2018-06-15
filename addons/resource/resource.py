@@ -350,6 +350,7 @@ class resource_calendar(osv.osv):
         for interval in working_intervals:
             work_intervals = self.interval_remove_leaves(cr, uid, interval, leaves, context=context)
             intervals += work_intervals
+        print intervals
 
         return intervals
 

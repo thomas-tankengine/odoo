@@ -32,7 +32,7 @@
 -
   I check that customer invoice state is "Open"
 -
-  !assert {model: account.invoice, id: account_invoice_state}:
+  !assert {model: account.invoice, id: account_invoice_state}:+
     - state == 'open'
 -
   I check the journal associated and put this journal as not

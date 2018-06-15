@@ -51,6 +51,7 @@ from weakref import WeakSet
 from werkzeug.local import Local, release_local
 
 from openerp.tools import frozendict, classproperty
+from datetime import datetime
 
 _logger = logging.getLogger(__name__)
 
@@ -244,10 +245,12 @@ def make_wrapper(decorator, method, old_api, new_api):
     """ Return a wrapper method for ``method``. """
     def wrapper(self, *args, **kwargs):
         # avoid hasattr(self, '_ids') because __getattr__() is overridden
+
         if '_ids' in self.__dict__:
-            return new_api(self, *args, **kwargs)
+            result = new_api(self, *args, **kwargs)
         else:
-            return old_api(self, *args, **kwargs)
+            result = old_api(self, *args, **kwargs)
+        return result
 
     # propagate specific openerp attributes from method to wrapper
     for attr in WRAPPED_ATTRS:
@@ -257,6 +260,7 @@ def make_wrapper(decorator, method, old_api, new_api):
     wrapper._orig = method
 
     return wrapper
+
 
 
 def get_downgrade(method):

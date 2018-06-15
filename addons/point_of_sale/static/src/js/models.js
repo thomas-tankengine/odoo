@@ -671,19 +671,25 @@ exports.PosModel = Backbone.Model.extend({
     push_order: function(order, opts) {
             opts = opts || {};
         var self = this;
+        var orders = []
 
         if(order){
             this.db.add_order(order.export_as_JSON());
+            orders = [this.db.get_order(order.uid)]
         }
         
         var pushed = new $.Deferred();
 
         this.flush_mutex.exec(function(){
-            var flushed = self._flush_orders(self.db.get_orders(), opts);
+            var flushed = self._flush_orders(orders, opts);
 
-            flushed.always(function(ids){
+            flushed.done(function(ids){
                 pushed.resolve();
             });
+
+            flushed.fail(function(ids){
+                pushed.reject()
+            })
 
             return flushed;
         });

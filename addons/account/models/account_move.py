@@ -107,6 +107,7 @@ class AccountMove(models.Model):
     def create(self, vals):
         move = super(AccountMove, self.with_context(check_move_validity=False, partner_id=vals.get('partner_id'))).create(vals)
         move.assert_balanced()
+        # print 1/0
         return move
 
     @api.multi

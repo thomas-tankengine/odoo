@@ -1953,8 +1953,13 @@ var PaymentScreenWidget = ScreenWidget.extend({
                 order.finalize();
             });
         } else {
-            this.pos.push_order(order);
-            this.gui.show_screen('receipt');
+            var test = this.pos.push_order(order).done(function (rex) {
+                console.log("rexn",rex)
+                self.gui.show_screen('receipt');
+            }).fail(function (erreur) {
+                console.log("erreur", erreur)
+            })
+            console.log(test)
         }
     },
 

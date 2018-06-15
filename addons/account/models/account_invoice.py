@@ -421,6 +421,7 @@ class AccountInvoice(models.Model):
 
             # Generate one tax line per tax, however many invoice lines it's applied to
             tax_grouped = invoice.get_taxes_values()
+            print 'tax_grouped', tax_grouped
 
             # Create new tax lines
             for tax in tax_grouped.values():
@@ -590,6 +591,7 @@ class AccountInvoice(models.Model):
                 else:
                     tax_grouped[key]['amount'] += val['amount']
                     tax_grouped[key]['base'] += val['base']
+                print 'line', line, tax_grouped[key]
         return tax_grouped
 
     @api.multi
@@ -1317,8 +1319,6 @@ class AccountInvoiceTax(models.Model):
     company_id = fields.Many2one('res.company', string='Company', related='account_id.company_id', store=True, readonly=True)
     currency_id = fields.Many2one('res.currency', related='invoice_id.currency_id', store=True, readonly=True)
     base = fields.Monetary(string='Base', compute='_compute_base_amount')
-
-
 
 
 class AccountPaymentTerm(models.Model):

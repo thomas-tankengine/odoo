@@ -197,6 +197,7 @@ class SaleOrder(models.Model):
         - Invoice address
         - Delivery address
         """
+        print 'old_onchange_partner_id'
         if not self.partner_id:
             self.update({
                 'partner_invoice_id': False,

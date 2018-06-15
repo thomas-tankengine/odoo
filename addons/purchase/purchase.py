@@ -780,7 +780,6 @@ class ProcurementOrder(models.Model):
 
                     if seller and seller.product_uom != procurement.purchase_line_id.product_uom:
                         price_unit = self.env['product.uom']._compute_price(seller.product_uom.id, price_unit, to_uom_id=procurement.purchase_line_id.product_uom.id)
-
                     procurement.purchase_line_id.product_qty = product_qty
                     procurement.purchase_line_id.price_unit = price_unit
                 else:
@@ -870,7 +869,6 @@ class ProcurementOrder(models.Model):
         name = product_lang.display_name
         if product_lang.description_purchase:
             name += '\n' + product_lang.description_purchase
-        print '_get_date_planned', seller, po
         date_planned = self.env['purchase.order.line']._get_date_planned(seller, po=po).strftime(DEFAULT_SERVER_DATETIME_FORMAT)
 
         return {
